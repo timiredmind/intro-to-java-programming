@@ -29,8 +29,39 @@ public class Exercise_2_08 {
 
         long currentHour = totalHours % 24;
 
+        String currentHourString = "";
+        if (currentHour < 10) {
+            currentHourString = "0" + currentHour;
+        } else {
+            currentHourString += currentHour;
+        }
+
+
+        String currentMinuteString = "";
+        if (currentMinute < 10) {
+            currentMinuteString = "0" + currentMinute;
+        } else {
+            currentMinuteString += currentMinute;
+        }
+
+        String currentSecondString = "";
+        if (currentSecond < 10) {
+            currentSecondString = "0" + currentSecond;
+        } else {
+            currentSecondString += currentSecond;
+        }
+
+        String timeZoneString = "";
+        if (timeZone > 0) {
+            timeZoneString = "+" + timeZone;
+        } else {
+            timeZoneString += timeZone;
+        }
+
+
         System.out.println(
                 "The current time is " +
-                        currentHour + ":" + currentMinute + ":" + currentSecond + " GMT " + timeZone);
+                        currentHourString + ":" + currentMinuteString + ":"
+                        + currentSecondString + " GMT " + timeZoneString);
     }
 }
