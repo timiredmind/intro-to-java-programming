@@ -11,14 +11,20 @@ import java.util.Scanner;
 public class Exercise_01 {
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your score: ");
-        final int score = scanner.nextInt();
+        int score = 0;
+        while (score != -1) {
+            System.out.println("Enter your score: ");
+            score = scanner.nextInt();
 
-        if (score >= 60) {
-            System.out.println("You passed the exam.");
-        } else {
-            System.out.println("You don't pass the exam.");
+            String message;
+            if (score >= 60) {
+                message = "You passed the exam.";
+            } else if (score == -1) {
+                message = "No numbers are entered except 0";
+            } else {
+                message = "You don't pass the exam.";
+            }
+            System.out.println(message);
         }
-        System.exit(-1);
     }
 }
