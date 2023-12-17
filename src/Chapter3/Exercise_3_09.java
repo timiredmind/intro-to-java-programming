@@ -7,12 +7,13 @@ public class Exercise_3_09 {
         final Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the first 9 digits of an ISBN as integer: ");
         final int firstNineDigits = scanner.nextInt();
+        scanner.close();
 
         int digits = firstNineDigits;
 
         int d1 = digits / (int) Math.pow(10, 8);
         digits %= Math.pow(10, 8);
-        int d2 = digits/ (int) Math.pow(10, 7);
+        int d2 = digits / (int) Math.pow(10, 7);
         digits %= Math.pow(10, 7);
         int d3 = digits / (int) Math.pow(10, 6);
         digits %= Math.pow(10, 6);
@@ -28,7 +29,6 @@ public class Exercise_3_09 {
         digits %= Math.pow(10, 1);
         int d9 = digits;
 
-
         int checksum =
                 (d1 + (d2 * 2) + (d3 * 3) + (d4 * 4)
                         + (d5 * 5) + (d6 * 6) + (d7 * 7) + (d8 * 8) + (d9 * 9)) % 11;
@@ -40,6 +40,6 @@ public class Exercise_3_09 {
             d10 = String.valueOf(checksum);
         }
 
-        System.out.println("" + d1 + "" +  d2+ d3+d4+d5+d6+d7+d8+ d9 + d10);
+        System.out.println(String.valueOf(d1) + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10);
     }
 }
